@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Accordions from './components/Accordion'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Herosection from './telwindcss/heosection'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +13,7 @@ function App() {
   return (
     <>
      <Accordions/>
+    <Herosection/>
     </>
   )
 }

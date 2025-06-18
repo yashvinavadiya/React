@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Accordions from './components/Accordion'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Herosection from './telwindcss/heosection'
+import "tailwindcss";
+import Demo from './chakraui/chakraui';
+import { Provider } from './components/ui/provider';
 
 
 function App() {
@@ -14,6 +15,10 @@ function App() {
     <>
      <Accordions/>
     <Herosection/>
+    <Provider>
+    <Demo/>
+    </Provider>
+
     </>
   )
 }

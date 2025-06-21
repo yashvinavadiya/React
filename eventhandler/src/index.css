@@ -43,6 +43,8 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
+  height: 300px;
+  width: 300px;
 }
 button.clicked {
   background-color: black;

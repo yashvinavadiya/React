@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+@layer components{
+  .head{
+    @apply text-4xl text-white p-2 bg-blue-800 text-center font-black
+  }
+  .btn{
+    @apply text-xl text-white px-4 py-2 bg-blue-800 m-4 block w-fit rounded-full
+  }
+  .active{
+    @apply bg-blue-800 text-white !p-2
+  }
+}

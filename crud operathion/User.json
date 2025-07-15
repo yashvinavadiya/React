@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "8229",
+      "username": "nidhi",
+      "age": "25",
+      "phoneno": "1234567890",
+      "address": "surat",
+      "gender": "female",
+      "agree": false
+    },
+    {
+      "id": "66c5",
+      "username": "yashvi",
+      "age": "20",
+      "phoneno": "1234567890",
+      "address": "surat",
+      "gender": "female",
+      "agree": false
+    },
+    {
+      "id": "58d1",
+      "username": "jensiben",
+      "age": "25",
+      "phoneno": "1234567890",
+      "address": "surat",
+      "gender": "female",
+      "agree": true
+    }
+  ]
+}

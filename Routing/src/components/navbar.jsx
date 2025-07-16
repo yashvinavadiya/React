@@ -33,7 +33,8 @@ function Component() {
           Home
         </NavbarLink>
         <NavbarLink href="/about">About</NavbarLink>
-        <NavbarLink href="/contact">Contact</NavbarLink>
+        <NavbarLink href="/profile">Profile</NavbarLink>
+         <NavbarLink href="/contact">Contact</NavbarLink>
       </NavbarCollapse>
     </Navbar>
      <main>

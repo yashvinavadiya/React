@@ -1,28 +1,29 @@
 /* Navbar.css */
 
 .ecom-navbar {
-  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  background: linear-gradient(90deg,#FFEAEA);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   padding: 0.6rem 1rem;
+  
 }
 
 .ecom-logo {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #ffffff !important;
+  color: black !important;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
 }
 
 .ecom-nav-links .nav-link {
   font-weight: 500;
-  color: #f1f1f1 !important;
+  color: black !important;
   transition: all 0.3s ease;
   margin-right: 1rem;
 }
 
 .ecom-nav-links .nav-link:hover {
-  color: #ffdd57 !important;
+  color: #748DAE !important;
   text-decoration: underline;
 }
 

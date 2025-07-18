@@ -8,48 +8,48 @@ import {
   Typography,
   CardActions,
   Button,
-  Box
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
-  // Fetch products from JSON server
   useEffect(() => {
     fetchProducts();
   }, []);
 
-  const fetchProducts = () => {
-    fetch('http://localhost:3000/item')
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((err) => console.error('Error fetching products:', err));
+  const fetchProducts = async () => {
+    try {
+      const res = await fetch('http://localhost:3000/item');
+      const data = await res.json();
+      setProducts(data);
+    } catch (err) {
+      console.error('Error fetching products:', err);
+    }
   };
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this product?');
-    if (!confirmDelete) return;
-
-    try {
-      await fetch(`http://localhost:3000/item/${id}`, {
-        method: 'DELETE',
-      });
-      fetchProducts(); // Refresh the list
-    } catch (error) {
-      console.error('Error deleting product:', error);
-      alert('Failed to delete product');
+    if (window.confirm('Are you sure you want to delete this product?')) {
+      try {
+        await fetch(`http://localhost:3000/item/${id}`, {
+          method: 'DELETE',
+        });
+        fetchProducts();
+      } catch (error) {
+        console.error('Error deleting product:', error);
+      }
     }
   };
 
   const handleEdit = (id) => {
-    alert(`Navigate to edit page for product ID: ${id}`);
-    // Optional: navigate(`/edit/${id}`) if using React Router
+    navigate(`/edit/${id}`);
   };
 
   return (
     <Container sx={{ mt: 5 }}>
-      <Typography variant="h4" align="center" gutterBottom color="primary">
-         Product List
+      <Typography variant="h4" align="center" gutterBottom color="#898AC4">
+        Product List
       </Typography>
 
       <Grid container spacing={4}>
@@ -61,8 +61,8 @@ const Home = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 borderRadius: 3,
-                boxShadow: 3,
-                background: 'linear-gradient(135deg, #f5f5f5, #f0f0f0)',
+                boxShadow: 4,
+                background: 'linear-gradient(135deg, #fafafa, #e0e0e0)',
               }}
             >
               <CardMedia
@@ -71,31 +71,23 @@ const Home = () => {
                 alt={product.name}
                 sx={{ height: 250, objectFit: 'contain', p: 2 }}
               />
-
               <CardContent>
-                <Typography variant="h6" component="div" sx={{ textTransform: 'uppercase' }}>
+                <Typography variant="h6" sx={{ textTransform: 'uppercase', fontWeight: 600 }}>
                   {product.name}
                 </Typography>
                 <Typography variant="body1" color="secondary">
                   ₹ {product.price}
                 </Typography>
               </CardContent>
-
-              <CardActions sx={{ mt: 'auto', justifyContent: 'space-between', px: 2 }}>
-                <Button
-                  size="small"
-                  variant="contained"
-                  color="info"
-                  onClick={() => handleEdit(product.id)}
-                >
+              <CardActions sx={{ justifyContent: 'space-between', px: 2, mt: 'auto' }}>
+                <Button size="small" variant="contained" color="black" onClick={() => handleEdit(product.id)} sx={{
+                   backgroundColor:"#FEC5F6"
+                }}>
                   Edit
                 </Button>
-                <Button
-                  size="small"
-                  variant="contained"
-                  color=""
-                  onClick={() => handleDelete(product.id)}
-                >
+                <Button size="small" variant="contained" color="black" onClick={() => handleDelete(product.id)} sx={{
+                  backgroundColor:"#FEC5F6"
+                }}>
                   Delete
                 </Button>
               </CardActions>

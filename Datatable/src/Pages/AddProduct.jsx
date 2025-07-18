@@ -53,8 +53,8 @@ const AddProduct = () => {
   return (
     <Container maxWidth="sm" sx={{ mt: 8 }}>
       <Paper elevation={6} sx={{ p: 4, borderRadius: 3, background: 'linear-gradient(135deg, #f3e5f5, #ede7f6)' }}>
-        <Typography variant="h4" align="center" gutterBottom color="primary">
-          🛒 Add New Product
+        <Typography variant="h4" align="center" gutterBottom color="">
+           Add New Product
         </Typography>
 
         <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>

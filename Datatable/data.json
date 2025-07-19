@@ -2,15 +2,93 @@
   "item": [
     {
       "id": "1f5d",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuS8AimFv-GUOXPAeo6uz-2YIl9btD5P2xzA&s",
-      "name": "yashvi",
-      "price": "34"
+      "image": "https://themewagon.github.io/MiniStore/images/product-item1.jpg",
+      "name": "Iphone 10",
+      "price": 980
     },
     {
       "id": "3b3f",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuS8AimFv-GUOXPAeo6uz-2YIl9btD5P2xzA&s",
-      "name": "nidhi",
+      "image": "https://themewagon.github.io/MiniStore/images/product-item2.jpg",
+      "name": "Iphone 11",
       "price": 23456
+    },
+    {
+      "id": "5a1c",
+      "image": "https://themewagon.github.io/MiniStore/images/product-item3.jpg",
+      "name": "Iphone 8",
+      "price": 459
+    },
+    {
+      "id": "6b2e",
+      "image": "https://themewagon.github.io/MiniStore/images/product-item4.jpg",
+      "name": "Iphone 13",
+      "price": 1200
+    },
+    {
+      "id": "7d9f",
+      "image": "https://themewagon.github.io/MiniStore/images/product-item6.jpg",
+      "name": "Pink Watch",
+      "price": 550
+    },
+    {
+      "id": "8e0a",
+      "image": "https://themewagon.github.io/MiniStore/images/product-item7.jpg",
+      "name": "Heavy Watch",
+      "price": 320
+    },
+    {
+      "id": "9f3b",
+      "image": "https://themewagon.github.io/MiniStore/images/product-item8.jpg",
+      "name": "Stopped Watch",
+      "price": 999
+    },
+    {
+      "id": "10c4",
+      "image": "https://themewagon.github.io/MiniStore/images/product-item9.jpg",
+      "name": "Black Watch",
+      "price": 760
+    },
+    {
+      "id": "11e7",
+      "image": "https://themewagon.github.io/MiniStore/images/post-item1.jpg",
+      "name": "Get some cool gadgets",
+      "price": 680
+    },
+    {
+      "id": "12f6",
+      "image": "https://themewagon.github.io/MiniStore/images/post-item2.jpg",
+      "name": "Birds",
+      "price": 299
+    },
+    {
+      "id": "13a8",
+      "image": "https://themewagon.github.io/MiniStore/images/post-item3.jpg",
+      "name": " Camera ",
+      "price": 875
+    },
+    {
+      "id": "14b9",
+      "image": "https://themewagon.github.io/MiniStore/images/insta-item1.jpg",
+      "name": "Iphone 10",
+      "price": 520
+    },
+    {
+      "id": "15d1",
+      "image": "https://themewagon.github.io/MiniStore/images/insta-item2.jpg",
+      "name": "Heavy Watch",
+      "price": 1340
+    },
+    {
+      "id": "16e2",
+      "image": "https://themewagon.github.io/MiniStore/images/insta-item3.jpg",
+      "name": "Iphone 12",
+      "price": 610
+    },
+    {
+      "id": "17f3",
+      "image": "https://themewagon.github.io/MiniStore/images/insta-item4.jpg",
+      "name": "Birds",
+      "price": 710
     }
   ]
 }

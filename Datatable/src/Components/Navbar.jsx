@@ -19,15 +19,8 @@ function NavScrollExample() {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/edit">Edit</Nav.Link>
             <Nav.Link as={Link} to="/add-product">Add Product</Nav.Link>
+             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search products..."
-              className="ecom-search"
-              aria-label="Search"
-            />
-          </Form>
         </Navbar.Collapse>
       </Container>
     </Navbar>

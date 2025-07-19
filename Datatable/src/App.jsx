@@ -5,6 +5,7 @@ import NavScrollExample from './Components/Navbar'
 import Home from './Pages/Home'
 import Edit from './Pages/EditPage'
 import AddProduct from './Pages/AddProduct'
+import Contact from './Pages/Contact'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
     </>
   )

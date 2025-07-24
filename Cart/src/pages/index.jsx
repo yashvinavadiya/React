@@ -1,0 +1,8 @@
+export { default as HomePage } from './Home'
+export { default as ProductPage } from './Product'
+export { default as LoginPage } from './Login'
+export { default as CartPage } from './Cart'
+export { default as WishlistPage } from './Wishlist'
+export { default as ErrorPage } from './Error'
+export { default as ProfilePage } from './Profile'
+export {default as Navbar} from '../Components/Navbar'

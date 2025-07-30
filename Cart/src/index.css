@@ -5,6 +5,6 @@
     @apply bg-fuchsia-300 text-white text-center text-4xl font-black p-4 mt-5
   }
   .btn{
-    @apply bg-blue-300 text-white text-center text-4xl font-black p-4 w-fit m-2 rounded-2xl
+    @apply bg-blue-300 text-white text-center text-4xl font-black p-4 w-fit m-2 
   }
 }

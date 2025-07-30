@@ -13,8 +13,8 @@ const Cart = () => {
       <div>
         {cartdata.map((item, index) => {
           return (
-            <div key={index} className="">
-              <div className="max-w-80 border-2 border-black p-4">
+            <div key={index} className=" ">
+              <div className="max-w-80 border-2 border-black p-4 mt-5 rounded-2xl m-5 ">
                 <div>
                   <img
                     src={item.image}
@@ -32,7 +32,7 @@ const Cart = () => {
                 <div>
                   <button
                     onClick={() => dispatch(addToCart(item.id))}
-                    className="btn text-lg p-3 rounded-none"
+                    className="btn text-lg p-3 rounded-2xl"
                   >
                     ADD CART
                   </button>

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart, addProduct } from "../cart/cartSlice";
-import { selectProducts, selectCartProducts } from "../cart/Cartselectores";
+import { addToCart, addProduct } from "../cart/cartslice";
+import { addToWishlist } from "../cart/wishlistSlice"; 
+import { selectCartProducts } from "../cart/Cartselectores";
 
 const Product = () => {
-  const products = useSelector(selectProducts);
-  const cartItems = useSelector(selectCartProducts);
   const dispatch = useDispatch();
+
+  const cartItems = useSelector(selectCartProducts);
+  const wishlistItems = useSelector((state) => state.wishlist);
 
   const [productData, setProductData] = useState([]);
 
@@ -32,7 +34,7 @@ const Product = () => {
                   <div>
                     <img
                       src={item.image}
-                      alt=""
+                      alt={item.title}
                       className="w-[300px] h-[300px] object-contain"
                     />
                   </div>
@@ -43,7 +45,8 @@ const Product = () => {
                       Rs.{item.price}
                     </p>
                   </div>
-                  <div>
+                  <div className="flex gap-2 mt-3">
+                    {/* Add to Cart Button */}
                     <button
                       onClick={() => {
                         const existingItem = cartItems.find(
@@ -56,9 +59,27 @@ const Product = () => {
                           alert("Added successfully");
                         }
                       }}
-                      className="btn text-lg p-3 rounded-2xl"
+                      className="btn text-lg p-3 rounded-2xl bg-fuchsia-300 text-white"
                     >
                       ADD CART
+                    </button>
+
+                    {/* Wishlist Button */}
+                    <button
+                      onClick={() => {
+                        const alreadyInWishlist = wishlistItems.find(
+                          (w) => w.id === item.id
+                        );
+                        if (alreadyInWishlist) {
+                          alert("Already in wishlist");
+                        } else {
+                          dispatch(addToWishlist(item));
+                          alert("Added to wishlist successfully");
+                        }
+                      }}
+                      className="btn text-lg p-3 rounded-2xl bg-blue-300 text-white"
+                    >
+                      WISHLIST
                     </button>
                   </div>
                 </div>

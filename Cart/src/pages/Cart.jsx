@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectCartProducts } from "../cart/Cartselectores";
+import { MdCancel } from "react-icons/md";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -10,39 +11,46 @@ const Cart = () => {
 
   return (
     <>
-      <div>
+    <div className="container mx-auto">
+      <table className="border table-fixed w-full text-center mt-10">
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+          <th>Action</th>
+        </tr>
         {cartdata.map((item, index) => {
           return (
-            <div key={index} className=" ">
-              <div className="max-w-80 border-2 border-black p-4 mt-5 rounded-2xl m-5 ">
+            <tr key={index} className="border">
+              <td className="text-center border">
+                <img src={item.image} className="size-20 mx-auto" alt="" />
+              </td>
+              <td className="border">
+                <h2>{item.title}</h2>
+              </td>
+              <td className="border">
+                <p>Rs. {item.price}</p>
+              </td>
+              <td className="border">
                 <div>
-                  <img
-                    src={item.image}
-                    alt=""
-                    className="w-[300px] h-[300px] object-contain"
-                  />
+                  <div>+</div>
+                  <div>0</div>
+                  <div>-</div>
                 </div>
-                <div>
-                  <p className="line-clamp-1">{item.title}</p>
-                  <p className="line-clamp-2">{item.description}</p>
-                  <p className="btn p-2 rounded-none text-lg bg-white text-black underline">
-                    Rs.{item.price}
-                  </p>
-                </div>
-                <div>
-                  <button
-                    onClick={() => dispatch(addToCart(item.id))}
-                    className="btn text-lg p-3 rounded-2xl"
-                  >
-                    ADD CART
-                  </button>
-                </div>
-              </div>
-            </div>
+              </td>
+              <td className="border"></td>
+              <td>
+                <span className="flex justify-center">
+                  <MdCancel />
+                </span>
+              </td>
+            </tr>
           );
         })}
-      </div>
-      ;
+      </table>
+    </div>
     </>
   );
 };

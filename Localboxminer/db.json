@@ -1,0 +1,6 @@
+[
+  { "name": "file1.txt", "size": 2048, "type": "text" },
+  { "name": "image1.jpg", "size": 5000, "type": "image" },
+  { "name": "video1.mp4", "size": 12000, "type": "video" },
+  { "name": "file2.txt", "size": 1024, "type": "text" }
+]

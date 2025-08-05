@@ -15,7 +15,6 @@ const Layout = () => {
           <Route path="/login" element={<LoginPage/>}></Route>
           <Route path="/profile" element={<ProfilePage/>}></Route>
           <Route path="*" element={<ErrorPage/>}></Route>
-      
         </Routes>
       </Router>
     </div>

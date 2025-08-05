@@ -1,34 +1,43 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { selectwishlistProducts } from "../cart/wishSelectors";
+import { addToWish } from "../cart/wishlistslice";
+
 
 const Wishlist = () => {
-  const wishlistItems = useSelector((state) => state.wishlist);
+  const dispatch = useDispatch();
+  const wishdata = useSelector(selectwishlistProducts);
+
+  console.log("wishdata", wishdata);
 
   return (
-    <div className="container mx-auto">
-      <h1 className="text-3xl font-bold text-center mt-5">Wishlist</h1>
-      <div className="flex flex-wrap justify-center gap-12 mt-5">
-        {wishlistItems.length === 0 ? (
-          <p className="text-lg">No items in wishlist.</p>
-        ) : (
-          wishlistItems.map((item, index) => (
-            <div key={index} className="max-w-80 border-2 border-black p-4 rounded-2xl">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-[300px] h-[300px] object-contain"
-              />
-              <p className="line-clamp-1">{item.title}</p>
-              <p className="line-clamp-2">{item.description}</p>
-              <p className="btn p-2 rounded-none text-lg bg-white text-black underline">
-                Rs.{item.price}
-              </p>
-            </div>
-          ))
-        )}
+    <>
+      <div className="container mx-auto mt-10">
+        <table className="border table-fixed w-full text-center">
+          <thead>
+            <tr className="bg-gray-200">
+              <th className="border p-2">Image</th>
+              <th className="border p-2">Title</th>
+              <th className="border p-2">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {wishdata.map((item, index) => (
+              <tr key={index} className="border">
+                <td className="border p-2">
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="w-24 h-24 object-contain mx-auto"
+                  />
+                </td>
+                <td className="border p-2">{item.title}</td>
+                <td className="border p-2">Rs. {item.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </div>
+    </>
   );
 };
-
-export default Wishlist;
+export default Wishlist

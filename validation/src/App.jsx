@@ -8,7 +8,7 @@ import Form3 from "./components/form3";
 const App = () => {
   return (
     <>
-      <h1 className="head">This is Firebase and Authentication BaaS Module</h1>
+      <h1 className="head">Form validations</h1>
       <div className="flex flex-col justify-center items-center h-screen">
         {/* <TaskForm/> */}
         {/* <TaskList/> */}

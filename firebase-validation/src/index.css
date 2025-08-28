@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer components {
+  /* Reusable heading class */
+  .head {
+    @apply bg-amber-300 text-white text-center text-3xl font-bold py-4 shadow-md;
+  }
+
+  /* General purpose button */
+  .btn {
+    @apply bg-purple-700 text-white text-lg font-semibold px-6 py-2 rounded-xl m-2 
+           hover:bg-purple-800 transition duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500;
+  }
+
+  /* Variants for different actions */
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 focus:ring-blue-400;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 focus:ring-red-400;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-500 hover:bg-gray-600 focus:ring-gray-400;
+  }
+
+  /* Form container */
+  .form-container {
+    @apply flex justify-center items-center h-screen;
+  }
+
+  /* Form box */
+  .form-box {
+    @apply max-w-md w-full bg-blue-200 p-8 border border-gray-400 rounded-xl shadow-lg;
+  }
+
+  /* Input fields */
+  .input-field {
+    @apply block w-full px-4 py-2 border-b-2 border-gray-300 bg-white text-gray-900 text-sm 
+           focus:outline-none focus:ring-0 focus:border-blue-600 rounded-md;
+  }
+
+  /* Labels for floating effect */
+  .input-label {
+    @apply block text-sm font-medium text-gray-600 mb-1;
+  }
+
+  /* Table layout */
+  .task-table {
+    @apply w-full max-w-4xl mx-auto mt-8 border-collapse shadow-lg;
+  }
+
+  .task-table th {
+    @apply bg-fuchsia-300 text-white text-left p-4;
+  }
+
+  .task-table td {
+    @apply border-t border-gray-200 p-4;
+  }
+
+  .task-row {
+    @apply hover:bg-gray-100 transition;
+  }
+}

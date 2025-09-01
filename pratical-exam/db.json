@@ -1,0 +1,12 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Amit Patel",
+      "roll": "101",
+      "className": "10",
+      "marks": "85",
+      "attendance": "92"
+    }
+  ]
+}

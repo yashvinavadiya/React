@@ -1,34 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import StudentForm from "../components/StudentForm";
 import StudentList from "../components/StudentList";
 import API from "../services/api";
 
-export default function StudentPage() {
-  const [students, setStudents] = useState([]);
+export default function StudentPage({ students, setStudents }) {
   const [editingStudent, setEditingStudent] = useState(null);
 
-  const fetchStudents = async () => {
-    const res = await API.get("/students");
-    setStudents(res.data);
-  };
-
-  useEffect(() => {
-    fetchStudents();
-  }, []);
-
   const addStudent = async (student) => {
-    if (editingStudent) {
-      await API.put(`/students/${student.id}`, student);
-      setEditingStudent(null);
-    } else {
-      await API.post("/students", student);
+    try {
+      if (editingStudent) {
+        await API.put(`/students/${student.id}`, student);
+        setEditingStudent(null);
+      } else {
+        await API.post("/students", student);
+      }
+      const res = await API.get("/students");
+      setStudents(res.data);
+    } catch (error) {
+      console.error("Error adding/editing student:", error);
     }
-    fetchStudents();
   };
 
   const deleteStudent = async (id) => {
-    await API.delete(`/students/${id}`);
-    fetchStudents();
+    try {
+      await API.delete(`/students/${id}`);
+      const res = await API.get("/students");
+      setStudents(res.data);
+    } catch (error) {
+      console.error("Error deleting student:", error);
+    }
   };
 
   return (

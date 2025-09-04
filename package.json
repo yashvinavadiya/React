@@ -1,6 +1,14 @@
 {
   "dependencies": {
+    "@chakra-ui/react": "^3.21.0",
+    "@emotion/react": "^11.14.0",
+    "@tailwindcss/vite": "^4.1.10",
     "bootstrap": "^5.3.6",
-    "react-bootstrap": "^2.10.10"
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.2",
+    "nodemon": "^3.1.10",
+    "react-bootstrap": "^2.10.10",
+    "tailwindcss": "^4.1.10"
   }
 }

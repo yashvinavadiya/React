@@ -1,0 +1,22 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "course": "Science",
+      "grNo": "12345",
+      "className": "10th",
+      "age": 15
+    },
+    {
+      "name": "yashvi",
+      "email": "yashu55@gmail.com",
+      "course": "Science",
+      "grNo": "12345",
+      "className": "10th",
+      "age": "12",
+      "id": "0c9a"
+    }
+  ]
+}

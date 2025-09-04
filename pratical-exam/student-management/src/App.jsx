@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
 import StudentForm from './components/StudentForm';
+import "./App.css"
 
 function App() {
   return (

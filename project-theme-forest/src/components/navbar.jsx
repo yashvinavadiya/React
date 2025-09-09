@@ -40,45 +40,6 @@ const Navbar = () => {
           <Link to="/forgetpassword" className="hover:text-yellow-400">Forget Password</Link>
         </ul>
       </nav>
-
-      {/* Slider */}
-      <div className="relative w-full h-[600px] overflow-hidden mt-2">
-        {/* Current Slide */}
-        <img
-          src={images[current]}
-          alt="slide"
-          className="w-full h-[600px] object-cover"
-        />
-
-        {/* Left Arrow */}
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black"
-        >
-          ◀
-        </button>
-
-        {/* Right Arrow */}
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-5 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full hover:bg-black"
-        >
-          ▶
-        </button>
-
-        {/* Dots
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-3">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-3 h-3 rounded-full ${
-                current === i ? "bg-white" : "bg-gray-500"
-              }`}
-            />
-          ))}
-        </div> */}
-      </div>
     </>
   );
 };

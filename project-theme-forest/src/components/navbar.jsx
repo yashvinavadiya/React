@@ -1,46 +1,118 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Badge from "@mui/material/Badge";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+
+// Icons
+import SearchIcon from "@mui/icons-material/Search";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Navbar = () => {
-  // Only 2 images
-  const images = [
-    "https://picsum.photos/id/1015/1920/1080",
-    "https://picsum.photos/id/1016/1920/1080",
-  ];
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [menuType, setMenuType] = useState("");
 
-  const [current, setCurrent] = useState(0);
+  const handleMenuOpen = (event, type) => {
+    setAnchorEl(event.currentTarget);
+    setMenuType(type);
+  };
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % images.length);
-  const prevSlide = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
-
-  // Autoplay (every 4 sec)
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 4000);
-    return () => clearInterval(timer);
-  }, []);
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    setMenuType("");
+  };
 
   return (
-    <>
-      {/* Navbar */}
-      <nav className="bg-gray-900 text-white shadow-md">
-        <ul className="flex items-center gap-8 h-16 px-6">
+    <AppBar position="static" sx={{ backgroundColor: "#fff", color: "#000", boxShadow: "none" }}>
+      <Toolbar sx={{ justifyContent: "space-between" }}>
+        {/* Left Logo */}
+        <Box sx={{ display: "flex", alignItems: "center" }}>
           <img
-            src="https://portotheme.com/html/porto_ecommerce/assets/images/logo-black.png"
-            alt="logo"
-            className="h-10"
+            src="https://portotheme.com/html/porto_ecommerce/assets/images/logo-black.png"  // 👈 your uploaded logo file
+            alt="Porto Logo"
+            style={{ height: 40 }}
           />
-          <Link to="/" className="hover:text-yellow-400">Home</Link>
-          <Link to="/aboutus" className="hover:text-yellow-400">About Us</Link>
-          <Link to="/blog" className="hover:text-yellow-400">Blog</Link>
-          <Link to="/shopingcart" className="hover:text-yellow-400">Shopping Cart</Link>
-          <Link to="/wishlist" className="hover:text-yellow-400">Wishlist</Link>
-          <Link to="/chekout" className="hover:text-yellow-400">Checkout</Link>
-          <Link to="/login" className="hover:text-yellow-400">Login</Link>
-          <Link to="/contact" className="hover:text-yellow-400">Contact</Link>
-          <Link to="/forgetpassword" className="hover:text-yellow-400">Forget Password</Link>
-        </ul>
-      </nav>
-    </>
+        </Box>
+
+        {/* Center Menu */}
+        <Box sx={{ display: "flex", gap: 3 }}>
+          <Button sx={{ color: "black" }}>HOME</Button>
+          <Button
+            sx={{ color: "black" }}
+            endIcon={<ExpandMoreIcon />}
+            onClick={(e) => handleMenuOpen(e, "categories")}
+          >
+            CATEGORIES
+          </Button>
+          <Button
+            sx={{ color: "black" }}
+            endIcon={<ExpandMoreIcon />}
+            onClick={(e) => handleMenuOpen(e, "products")}
+          >
+            PRODUCTS
+          </Button>
+          <Button
+            sx={{ color: "black" }}
+            endIcon={<ExpandMoreIcon />}
+            onClick={(e) => handleMenuOpen(e, "pages")}
+          >
+            PAGES
+          </Button>
+          <Button sx={{ color: "black" }}>BLOG</Button>
+          <Button sx={{ color: "black", fontWeight: "bold" }}>BUY PORTO!</Button>
+        </Box>
+
+        {/* Right Icons */}
+        <Box sx={{ display: "flex", gap: 2 }}>
+          <IconButton>
+            <SearchIcon />
+          </IconButton>
+          <IconButton>
+            <PersonOutlineIcon />
+          </IconButton>
+          <IconButton>
+            <FavoriteBorderIcon />
+          </IconButton>
+          <IconButton>
+            <Badge badgeContent={3} color="error">
+              <ShoppingBagOutlinedIcon />
+            </Badge>
+          </IconButton>
+        </Box>
+      </Toolbar>
+
+      {/* Dropdown Menus */}
+      <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
+        {menuType === "categories" && (
+          <>
+            <MenuItem onClick={handleMenuClose}>Men</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Women</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Kids</MenuItem>
+          </>
+        )}
+        {menuType === "products" && (
+          <>
+            <MenuItem onClick={handleMenuClose}>New Arrivals</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Best Sellers</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Sale</MenuItem>
+          </>
+        )}
+        {menuType === "pages" && (
+          <>
+            <MenuItem onClick={handleMenuClose}>About Us</MenuItem>
+            <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
+            <MenuItem onClick={handleMenuClose}>FAQs</MenuItem>
+          </>
+        )}
+      </Menu>
+    </AppBar>
   );
 };
 

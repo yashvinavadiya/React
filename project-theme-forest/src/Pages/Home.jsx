@@ -3,6 +3,7 @@ import Slider from "../components/Slider";
 import PromoBanners from "../components/PromoBanners";
 import Categories from "../components/Categories";
 import FeaturedProducts from "../components/FeaturedProducts";
+import Navbar from "../components/navbar";
 
 const Home = () => {
   return (

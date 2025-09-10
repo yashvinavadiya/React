@@ -23,3 +23,65 @@
 .logo{
   width: 130px;
 }
+.t1{
+  color: #777;
+  font-size: 2.5em;
+    font-weight: 400;
+    letter-spacing: -0.008em;
+    margin-bottom: 0.9rem;
+    font-family: "Segoe Script", "Savoye LET";
+    line-height: 1.334;
+}
+.t2{
+  font-size: 2.5em;
+  letter-spacing: 0.185em;
+  line-height: 1;
+  text-transform: uppercase !important;
+  margin-bottom: 0 !important;
+  color: #222529;
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+}
+.t3{
+  font-size: 5.625em;
+  line-height: 1;
+  margin-bottom: 2.4rem !important;
+  color: #222529;
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+}
+.p1{
+  line-height: 1;
+      text-transform: uppercase !important;
+          color: #222529;
+    font-weight: 700;
+    font-family: Poppins, sans-serif;
+}
+.p2{
+  background-color: white;
+  padding: 9px;
+      font-size: 2em;
+          transform: translateY(1px);
+}
+.btn1{
+  cursor: pointer;
+  padding: 1.1em 2.75em 1.125em;
+  border-color: #222529;
+    background-color: #222529;
+    color: #fff;
+    box-shadow: none;
+    font-size: 1.125em;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-weight: 700;
+    font-family: Poppins, sans-serif;
+    line-height: 1.429;
+     display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+
+}

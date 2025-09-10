@@ -28,10 +28,12 @@ const Slider = () => {
               className="w-full h-full object-fit "
             />
             <div className="absolute inset-0 flex flex-col items-start justify-center pl-20 text-white">
-              <h2 className="text-4xl font-bold mb-4">Big Sale</h2>
-              <p className="text-lg mb-6">Up to 50% Off on Electronics</p>
-              <button className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-200">
-                Shop Now
+              <h2 className="t1">Winter Fashion Trends</h2>
+              <h3 className="t2">GET UP TO 30% OFF</h3>
+              <h1 className="t3">on JACKETS</h1>
+              <p className="p1">STARTING AT   <span className="p2"><sup>$</sup>199 <sup>99</sup></span> </p>
+              <button className="btn1 mt-5">
+                SHOP NOW
               </button>
             </div>
           </div>
